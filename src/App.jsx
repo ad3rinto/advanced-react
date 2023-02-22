@@ -22,7 +22,7 @@ function App() {
       <h2>Advanced React</h2>
       <Starter />
       <h3>{count}</h3>
-      <button onClick={change}>Click Me</button>
+      <button type="button" onClick={change} className="btn">Click Me</button>
     </div>
   );
 }
