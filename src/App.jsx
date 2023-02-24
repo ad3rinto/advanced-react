@@ -1,43 +1,30 @@
-import Starter from "./tutorial/01-useState/starter/03-useState-array"
+import Starter from "./tutorial/01-useState/starter/04-useState-object"
 import { useState } from "react";
-import { data } from "./data";
 
-console.log(data)
+
+
 function App() {
 
-  const [people, setPeople] = useState(data);
+  const [name, setName] = useState("John");
+  const [age, setAge] = useState(0);
+  const [hobby, setHobby] = useState("Football");
 
-  const clearAll = () => {
-    setPeople([])
+  const updateDetails = () => {
+    setAge(50);
+    setHobby("Swimming");
+    setName("Jimmy Agbaje")
   }
-  const removeItem = (id) => {
-    const newPeople = people.filter((person) => person.id !== id)
-    setPeople(newPeople)
-  }
-
-
-
-
-
-
-
 
 
   return (
     <div className='container'>
-      <h2>Advanced React</h2>
       <Starter />
-      {people.map((person) => {
-        const { id, name } = person;
-        return <div key={id}>
-          <h2>{name} </h2>
-          <button onClick={() => removeItem(id)}>Reset</button>
-        </div>
-
-      })}
-      <button onClick={clearAll} style={{ marginTop: "2rem" }} className="btn">Complete Reset</button>
-
-
+      <div>
+        <h1>{name}</h1>
+        <h2>{age}</h2>
+        <p>Enjoys:  {hobby}</p>
+      </div>
+      <button type="button" className="btn" onClick={updateDetails}>Click Me</button>
 
     </div>
   );
