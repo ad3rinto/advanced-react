@@ -10,9 +10,9 @@ function App() {
   const [hobby, setHobby] = useState("Football");
 
   const updateDetails = () => {
-    setAge(50);
-    setHobby("Swimming");
-    setName("Jimmy Agbaje")
+    setAge(60);
+    setHobby("Politicking");
+    setName("Peter Obi")
   }
 
 
