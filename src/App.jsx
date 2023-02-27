@@ -18,31 +18,35 @@ function App() {
       hobby: "Preaching the gospel"
     })
 
+    const updateDetails = () => {
+      setAge(60);
+      setHobby("Politicking");
+      setName("Peter Obi")
+    }
+
+    console.log(person.name)
+    console.log(person.age)
+    console.log(person.hobby)
+
+    // const updateDetails = () => {
+    //   setAge(50);
+    //   setHobby("Swimming");
+    //   setName("Jimmy Agbaje")
+    // }
+
+
+    return (
+      <div className='container'>
+        <Starter />
+        <div>
+          <h1>{person.name}</h1>
+          <h2>{person.age}</h2>
+          <p>Enjoys:  {person.hobby}</p>
+        </div>
+        <button type="button" className="btn" onClick={renamePerson}>Click Me</button>
+
+      </div>
+    );
   }
 
-  console.log(person.name)
-  console.log(person.age)
-  console.log(person.hobby)
-
-  // const updateDetails = () => {
-  //   setAge(50);
-  //   setHobby("Swimming");
-  //   setName("Jimmy Agbaje")
-  // }
-
-
-  return (
-    <div className='container'>
-      <Starter />
-      <div>
-        <h1>{person.name}</h1>
-        <h2>{person.age}</h2>
-        <p>Enjoys:  {person.hobby}</p>
-      </div>
-      <button type="button" className="btn" onClick={renamePerson}>Click Me</button>
-
-    </div>
-  );
-}
-
-export default App;
+  export default App;
