@@ -13,11 +13,13 @@ export function App() {
 
   const updateDetails = () => {
     setPerson({
-      name: "Adeyemo Akanbi",
+      name: "Adeyemo Akanbi Aderinto",
       age: 2023 - 1940,
       hobby: " Preaching the word of God"
     })
   }
+
+  const { name, age, hobby } = person;
 
 
 
@@ -25,9 +27,9 @@ export function App() {
     <div className='container'>
       <Starter />
       <div>
-        <h1>{person.name}</h1>
-        <h2>{person.age}</h2>
-        <p>Enjoys:{person.hobby}</p>
+        <h1>{name}</h1>
+        <h2>{age} old this year</h2>
+        <p>Enjoys:{hobby}</p>
       </div>
       <button type="button" className="btn" onClick={updateDetails} >Click Me</button>
 
