@@ -3,50 +3,22 @@ import { useState } from "react";
 
 
 
-function App() {
-
-  // const [name, setName] = useState("John");
-  // const [age, setAge] = useState(0);
-  // const [hobby, setHobby] = useState("Football");
-
-  const [person, setPerson] = useState({ name: "Akin", age: 30, hobby: "Fishing" });
-
-  const renamePerson = () => {
-    setPerson({
-      name: "Omo'ba Adeyemo AA Aderinto iv",
-      age: 2023 - 1940,
-      hobby: "Preaching the gospel"
-    })
-
-    const updateDetails = () => {
-      setAge(60);
-      setHobby("Politicking");
-      setName("Peter Obi")
-    }
-
-    console.log(person.name)
-    console.log(person.age)
-    console.log(person.hobby)
-
-    // const updateDetails = () => {
-    //   setAge(50);
-    //   setHobby("Swimming");
-    //   setName("Jimmy Agbaje")
-    // }
+export function App() {
 
 
-    return (
-      <div className='container'>
-        <Starter />
-        <div>
-          <h1>{person.name}</h1>
-          <h2>{person.age}</h2>
-          <p>Enjoys:  {person.hobby}</p>
-        </div>
-        <button type="button" className="btn" onClick={renamePerson}>Click Me</button>
 
+
+
+  return (
+    <div className='container'>
+      <Starter />
+      <div>
+        <h1>Captain Ajasin</h1>
+        <h2>50</h2>
+        <p>Enjoys: tibi</p>
       </div>
-    );
-  }
+      <button type="button" className="btn" >Click Me</button>
 
-  export default App;
+    </div>
+  );
+}
