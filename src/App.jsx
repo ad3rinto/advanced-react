@@ -10,14 +10,14 @@ export function App() {
     age: 54,
     hobby: "Skin diving",
     occupation: "Actor",
-    nextOfKin: "Mariam Makeba",
+    nextOfKin: "Angela Blackstone",
     securityClearance: true
   })
 
   const updateDetails = () => {
     setPerson({
-      name: "Adeyemo Akanbi Aderinto",
-      age: 2023 - 1940,
+      name: "Professor Edwin Young",
+      age: 1969 - 2016,
       hobby: " Preaching the word of God",
       occupation: "University Administrator",
       nextOfKin: "John T Craig",
@@ -47,4 +47,3 @@ export function App() {
 
     </div>
   );
-}
