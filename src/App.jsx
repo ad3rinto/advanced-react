@@ -17,7 +17,7 @@ export function App() {
   const updateDetails = () => {
     setPerson({
       name: "Professor Edwin Young",
-      age: 1969 - 2016,
+      age: 2016 - 1940,
       hobby: " Preaching the word of God",
       occupation: "University Administrator",
       nextOfKin: "John T Craig",
@@ -46,4 +46,5 @@ export function App() {
       <button type="button" className="btn" onClick={updateDetails} >Click Me</button>
 
     </div>
-  );
+  )
+};
