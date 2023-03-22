@@ -11,7 +11,7 @@ const UseEffectBasics = () => {
 
   useEffect(() => {
     console.log("hello from use effect");
-  });
+  }, []);
   return (
     <div className="container">
       <h1>Value: {value}</h1>
