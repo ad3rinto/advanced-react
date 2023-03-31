@@ -22,15 +22,20 @@ const FetchData = () => {
   }, []);
 
   return (
-    users.map((user) => (
-      <div className="container">
-        <h2> {user.login} </h2>
-        <p>{user.url}</p>
-        <img src={user.avatar_url} width={300} />
-      </div>
-    ))
+    <section className="user-container">
+      <h3 className="tc">Github Users</h3>
+      <ul className="users">
+        {users.map((user) => (
+          <li key={user.id} className="users">
+            <img className="users" src={user.avatar_url} />
+            <div><h5 className="users"> {user.login} </h5>
+              <a href={user.url} className="users">Link</a>
+            </div>
+          </li>))}
+      </ul>
 
-
+    </section>
   )
+
 };
 export default FetchData;
