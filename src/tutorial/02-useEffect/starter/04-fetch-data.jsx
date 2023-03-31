@@ -12,19 +12,22 @@ const FetchData = () => {
 
   useEffect(() => {
     const url = 'https://api.github.com/users';
-
-    fetch(url)
-      .then((resp) => resp.json())
-      .then((data) => setUsers(data)).then(console.log(users))
-      .catch((err) => console.log(err));
+    const pullData = () => {
+      fetch(url)
+        .then((resp) => resp.json())
+        .then((data) => setUsers(data)).then(console.log(users))
+        .catch((err) => console.log(err));
+    };
+    pullData()
   }, []);
 
   return (
     users.map((user) => (
-      <>
+      <div className="container">
         <h2> {user.login} </h2>
-        <img src={user.avatar_url} width={500} />
-      </>
+        <p>{user.url}</p>
+        <img src={user.avatar_url} width={300} />
+      </div>
     ))
 
 
