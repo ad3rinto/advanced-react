@@ -3,35 +3,45 @@ import Starter from "./tutorial/03-conditional-rendering/starter/07-user-challen
 import { useState } from "react";
 
 const App = () => {
-  const [user, setUser] = useState({ name: "john" });
+  const [user, setUser] = useState(null);
 
   const login = () => {
-    setUser(previousState => {
-      return { ...previousState, name: "test" }
-    })
-  }
+    //normally obtained via db or API connection
+    setUser({ name: "Vegetarian" });
+  };
 
   const logout = () => {
-    setUser(previousState => {
-      return { ...previousState, name: null }
-    })
+    setUser(null)
   }
 
 
-  const check = (<div>
-    <h2>Hello {user.name}</h2>
-    <button className="btn btn-primary" onClick={logout}>Logout</button>
-  </div>)
+  // const check = (<div>
+  //   <h2>Hello There {user.name}</h2>
+  //   <button className="btn btn-primary" onClick={logout}>Logout</button>
+  // </div>)
 
-  const uncheck = (<div>
-    <h2>Please Login</h2>
-    <button className="btn btn-primary" onClick={login}>Login</button>
-  </div>)
+  // const uncheck = (<div>
+  //   <h2>Please Login</h2>
+  //   <button className="btn btn-primary" onClick={login}>Login</button>
+  // </div>)
 
   return (
     <div className="container">
       <Starter />
-      <h2>{user ? check : uncheck}</h2>
+      {user ?
+        (
+          <div>
+            <h4>Hello there {user.name}</h4>
+            <button className="btn btn-primary" onClick={logout}>Logout</button>
+          </div>
+
+
+        ) : (
+          <div>
+            <h4>Please login</h4>
+            <button className="btn btn-primary" onClick={login}>Login</button>
+          </div>
+        )}
 
     </div>
   )
