@@ -1,23 +1,38 @@
-import Starter from "./tutorial/03-conditional-rendering/starter/01-multiple-returns-basics";
+import Starter from "./tutorial/03-conditional-rendering/starter/07-user-challenge"
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const App = () => {
-  //   const [value, setValue] = useState(0);
-  //   const sayHello = () => {
-  //     console.log("say Hello");
+  const [user, setUser] = useState({ name: "john" });
 
-  //   };
-  //   sayHello();
+  const login = () => {
+    setUser(previousState => {
+      return { ...previousState, name: "test" }
+    })
+  }
 
-  //   useEffect(() => {
-  //     console.log("hello from use effect");
-  //   }, []);
+  const logout = () => {
+    setUser(previousState => {
+      return { ...previousState, name: null }
+    })
+  }
+
+
+  const check = (<div>
+    <h2>Hello {user.name}</h2>
+    <button className="btn btn-primary" onClick={logout}>Logout</button>
+  </div>)
+
+  const uncheck = (<div>
+    <h2>Please Login</h2>
+    <button className="btn btn-primary" onClick={login}>Login</button>
+  </div>)
+
   return (
     <div className="container">
-      {/* <h1>Value: {value}</h1>
-      <button className="btn" onClick={() => setValue(value + 1)}>Click Me</button> */}
       <Starter />
+      <h2>{user ? check : uncheck}</h2>
+
     </div>
   )
 };
