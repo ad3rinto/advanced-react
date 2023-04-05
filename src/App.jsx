@@ -15,16 +15,6 @@ const App = () => {
   }
 
 
-  // const check = (<div>
-  //   <h2>Hello There {user.name}</h2>
-  //   <button className="btn btn-primary" onClick={logout}>Logout</button>
-  // </div>)
-
-  // const uncheck = (<div>
-  //   <h2>Please Login</h2>
-  //   <button className="btn btn-primary" onClick={login}>Login</button>
-  // </div>)
-
   return (
     <div className="container">
       <Starter />
