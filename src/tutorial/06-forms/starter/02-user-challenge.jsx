@@ -18,9 +18,15 @@ const UserChallenge = () => {
     console.log(newItem)
     const updatedUsers = [...users, newItem]
     setUsers(updatedUsers)
-
-
+    setName("")
   }
+
+  const deleteItem = (id) => {
+    const updatedUsers = users.filter((chap) => chap.id !== id);
+    setUsers(updatedUsers)
+  }
+
+
 
 
   return (
@@ -38,10 +44,13 @@ const UserChallenge = () => {
           submit
         </button>
       </form>
-      {users.map((person) =>
-        <div key={person.id}>
-          {person.name}
-        </div>)}
+      {users.map((person) => {
+        return (
+          <div key={person.id} className="container">
+            <h4>{person.name}</h4>
+            <button className="btn btn-primary" onClick={() => deleteItem(person.id)}>Delete</button>
+          </div>)
+      })}
     </div>
 
   );
